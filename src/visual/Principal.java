@@ -45,33 +45,34 @@ public class Principal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
 		
 		JSpinner spn_num1 = new JSpinner();
-		spn_num1.setBounds(82, 24, 46, 20);
+		spn_num1.setBounds(178, 24, 46, 20);
 		contentPane.add(spn_num1);
 		
 		
 		
 		JLabel lblNewLabel = new JLabel("N\u00FAmero 1");
-		lblNewLabel.setBounds(24, 27, 46, 14);
+		lblNewLabel.setBounds(24, 27, 116, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("N\u00FAmero 2");
-		lblNewLabel_1.setBounds(24, 104, 46, 14);
+		lblNewLabel_1.setBounds(24, 104, 116, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JSpinner spn_num2 = new JSpinner();
-		spn_num2.setBounds(82, 101, 46, 20);
+		spn_num2.setBounds(178, 101, 46, 20);
 		contentPane.add(spn_num2);
 		
 		
 		JLabel lblNewLabel_2 = new JLabel("Operaci\u00F3n");
-		lblNewLabel_2.setBounds(24, 63, 70, 14);
+		lblNewLabel_2.setBounds(24, 63, 116, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JComboBox cbx_operacion = new JComboBox();
 		cbx_operacion.setModel(new DefaultComboBoxModel(new String[] {"Suma", "Resta", "Multiplicaci\u00F3n", "Divisi\u00F3n"}));
-		cbx_operacion.setBounds(82, 60, 76, 20);
+		cbx_operacion.setBounds(178, 60, 76, 20);
 		contentPane.add(cbx_operacion);
 	
 		JButton btn_calcular = new JButton("Calcular");

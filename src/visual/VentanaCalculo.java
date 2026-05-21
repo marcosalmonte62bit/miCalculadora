@@ -24,11 +24,12 @@ public class VentanaCalculo extends JDialog {
 	 * Create the dialog.
 	 */
 	public VentanaCalculo(int valor1, int valor2, int selection) {
-		setTitle("Result");
-		setBounds(100, 100, 370, 162);
+		setTitle("Resultado");
+		setBounds(100, 100, 448, 162);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		setLocationRelativeTo(null);
 		contentPanel.setLayout(new BorderLayout(0, 0));
 		{
 			JPanel panel = new JPanel();
@@ -36,14 +37,14 @@ public class VentanaCalculo extends JDialog {
 			panel.setLayout(null);
 			{
 				JLabel lblNewLabel = new JLabel("El resultado de tu operaci\u00F3n es: ");
-				lblNewLabel.setBounds(10, 23, 163, 31);
+				lblNewLabel.setBounds(10, 23, 210, 31);
 				panel.add(lblNewLabel);
 			}
 			{
 				txtResultado = new JTextField();
 				txtResultado.setText(String.valueOf(Operaciones.operation(valor1, valor2, selection)));
 				txtResultado.setEditable(false);
-				txtResultado.setBounds(169, 28, 144, 20);
+				txtResultado.setBounds(230, 28, 144, 20);
 				panel.add(txtResultado);
 				txtResultado.setColumns(10);
 			}
