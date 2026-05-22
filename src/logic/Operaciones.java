@@ -22,8 +22,4 @@ public class Operaciones {
 		}
 		return result;
 	}
-	
-	public static int parse(String a) {
-		return Integer.parseInt(a);
-	}
 }

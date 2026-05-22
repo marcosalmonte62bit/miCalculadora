@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class PrincipalPrueba {
+public class PrincipalVisual {
 
 	private JFrame frmCalculadora;
 	private JTextField txtScreenDisplay;
@@ -43,7 +43,7 @@ public class PrincipalPrueba {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PrincipalPrueba window = new PrincipalPrueba();
+					PrincipalVisual window = new PrincipalVisual();
 					window.frmCalculadora.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -55,7 +55,7 @@ public class PrincipalPrueba {
 	/**
 	 * Create the application.
 	 */
-	public PrincipalPrueba() {
+	public PrincipalVisual() {
 		initialize();
 	}
 
@@ -82,7 +82,7 @@ public class PrincipalPrueba {
 				txtScreenDisplay.setText(txtScreenDisplay.getText() + "1");
 			}
 		});
-		keyOne.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-2.png")));
+		keyOne.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/image-2.png")));
 		keyOne.setBounds(83, 85, 53, 60);
 		frmCalculadora.getContentPane().add(keyOne);
 		
@@ -93,7 +93,7 @@ public class PrincipalPrueba {
 				txtScreenDisplay.setText(txtScreenDisplay.getText() + "2");
 			}
 		});
-		keyTwo.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-3.png")));
+		keyTwo.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/image-3.png")));
 		keyTwo.setBounds(146, 90, 53, 50);
 		frmCalculadora.getContentPane().add(keyTwo);
 		
@@ -104,7 +104,7 @@ public class PrincipalPrueba {
 				txtScreenDisplay.setText(txtScreenDisplay.getText() + "3");
 			}
 		});
-		keyThree.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-4.png")));
+		keyThree.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/image-4.png")));
 		keyThree.setBounds(209, 85, 53, 60);
 		frmCalculadora.getContentPane().add(keyThree);
 		
@@ -115,7 +115,7 @@ public class PrincipalPrueba {
 				txtScreenDisplay.setText(txtScreenDisplay.getText() + "4");
 			}
 		});
-		keyFour.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-5.png")));
+		keyFour.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/image-5.png")));
 		keyFour.setBounds(20, 156, 53, 50);
 		frmCalculadora.getContentPane().add(keyFour);
 		
@@ -126,7 +126,7 @@ public class PrincipalPrueba {
 				txtScreenDisplay.setText(txtScreenDisplay.getText() + "5");
 			}
 		});
-		keyFive.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-6.png")));
+		keyFive.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/image-6.png")));
 		keyFive.setBounds(83, 156, 53, 50);
 		frmCalculadora.getContentPane().add(keyFive);
 		
@@ -137,7 +137,7 @@ public class PrincipalPrueba {
 				txtScreenDisplay.setText(txtScreenDisplay.getText() + "6");
 			}
 		});
-		keySix.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-7.png")));
+		keySix.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/image-7.png")));
 		keySix.setBounds(146, 156, 53, 50);
 		frmCalculadora.getContentPane().add(keySix);
 		
@@ -148,7 +148,7 @@ public class PrincipalPrueba {
 				txtScreenDisplay.setText(txtScreenDisplay.getText() + "7");
 			}
 		});
-		keySeven.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-8.png")));
+		keySeven.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/image-8.png")));
 		keySeven.setBounds(209, 156, 53, 50);
 		frmCalculadora.getContentPane().add(keySeven);
 		
@@ -159,7 +159,7 @@ public class PrincipalPrueba {
 				txtScreenDisplay.setText(txtScreenDisplay.getText() + "9");
 			}
 		});
-		keyNine.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-10.png")));
+		keyNine.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/image-10.png")));
 		keyNine.setBounds(83, 212, 53, 60);
 		frmCalculadora.getContentPane().add(keyNine);
 		
@@ -170,7 +170,7 @@ public class PrincipalPrueba {
 				txtScreenDisplay.setText(txtScreenDisplay.getText() + "8");
 			}
 		});
-		keyEight.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-9.png")));
+		keyEight.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/image-9.png")));
 		keyEight.setBounds(20, 217, 53, 50);
 		frmCalculadora.getContentPane().add(keyEight);
 		
@@ -182,7 +182,7 @@ public class PrincipalPrueba {
 			}
 		});
 		
-		keyZero.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-1.png")));
+		keyZero.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/image-1.png")));
 		keyZero.setBounds(20, 90, 53, 50);
 		frmCalculadora.getContentPane().add(keyZero);
 		
@@ -196,7 +196,7 @@ public class PrincipalPrueba {
 				}
 			}
 		});
-		keyPlus.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/suma.png")));
+		keyPlus.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/suma.png")));
 		keyPlus.setBounds(146, 212, 53, 60);
 		frmCalculadora.getContentPane().add(keyPlus);
 		
@@ -210,7 +210,7 @@ public class PrincipalPrueba {
 				}
 			}
 		});
-		keyMinus.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/1.png")));
+		keyMinus.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/1.png")));
 		keyMinus.setBounds(209, 212, 53, 60);
 		frmCalculadora.getContentPane().add(keyMinus);
 		
@@ -224,7 +224,7 @@ public class PrincipalPrueba {
 				}
 			}
 		});
-		keyTimes.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/multi.png")));
+		keyTimes.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/multi.png")));
 		keyTimes.setBounds(83, 280, 53, 50);
 		frmCalculadora.getContentPane().add(keyTimes);
 		
@@ -238,7 +238,7 @@ public class PrincipalPrueba {
 				}
 			}
 		});
-		keyDivide.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/divi.png")));
+		keyDivide.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/divi.png")));
 		keyDivide.setBounds(146, 280, 53, 50);
 		frmCalculadora.getContentPane().add(keyDivide);
 		
@@ -286,7 +286,7 @@ public class PrincipalPrueba {
 				}
 			}
 		});
-		keyEquals.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/igual.png")));
+		keyEquals.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/igual.png")));
 		keyEquals.setBounds(209, 280, 53, 50);
 		frmCalculadora.getContentPane().add(keyEquals);
 		frmCalculadora.setBounds(100, 100, 300, 402);
