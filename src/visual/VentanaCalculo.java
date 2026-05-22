@@ -17,6 +17,10 @@ import java.awt.event.ActionEvent;
 
 public class VentanaCalculo extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtResultado;
 
@@ -42,7 +46,13 @@ public class VentanaCalculo extends JDialog {
 			}
 			{
 				txtResultado = new JTextField();
+				
+				try {
 				txtResultado.setText(String.valueOf(Operaciones.operation(valor1, valor2, selection)));
+				}
+				catch(ArithmeticException ex) {
+					txtResultado.setText("No se puede dividir entre cero");
+				}
 				txtResultado.setEditable(false);
 				txtResultado.setBounds(230, 28, 144, 20);
 				panel.add(txtResultado);

@@ -6,27 +6,35 @@ import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class PrincipalPrueba {
 
-	private JFrame frame;
-	private JTextField textField;
-	private JLabel lblNewLabel_1;
-	private JLabel lblNewLabel;
-	private JLabel lblNewLabel_2;
-	private JLabel lblNewLabel_3;
-	private JLabel lblNewLabel_4;
-	private JLabel lblNewLabel_5;
-	private JLabel lblNewLabel_6;
-	private JLabel lblNewLabel_7;
-	private JLabel lblNewLabel_8;
-	private JLabel lblNewLabel_9;
-	private JLabel lblNewLabel_10;
-	private JLabel lblNewLabel_11;
-	private JLabel lblNewLabel_12;
-	private JLabel lblNewLabel_13;
-	private JLabel lblNewLabel_14;
+	private JFrame frmCalculadora;
+	private JTextField txtScreenDisplay;
+	private JLabel keyOne;
+	private JLabel keyTwo;
+	private JLabel keyThree;
+	private JLabel keyFour;
+	private JLabel keyFive;
+	private JLabel keySix;
+	private JLabel keySeven;
+	private JLabel keyNine;
+	private JLabel keyEight;
+	private JLabel keyZero;
+	private JLabel keyPlus;
+	private JLabel keyMinus;
+	private JLabel keyTimes;
+	private JLabel keyDivide;
+	private JLabel keyEquals;
+	private int operador = -1;
+	private int valor1;
+	private int valor2;
+	private String[] separados;
+	
 
 	/**
 	 * Launch the application.
@@ -36,7 +44,7 @@ public class PrincipalPrueba {
 			public void run() {
 				try {
 					PrincipalPrueba window = new PrincipalPrueba();
-					window.frame.setVisible(true);
+					window.frmCalculadora.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -55,90 +63,233 @@ public class PrincipalPrueba {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.LIGHT_GRAY);
-		frame.getContentPane().setLayout(null);
+		frmCalculadora = new JFrame();
+		frmCalculadora.setResizable(false);
+		frmCalculadora.setTitle("Calculadora");
+		frmCalculadora.getContentPane().setBackground(Color.LIGHT_GRAY);
+		frmCalculadora.getContentPane().setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(20, 8, 242, 66);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		txtScreenDisplay = new JTextField();
+		txtScreenDisplay.setEditable(false);
+		txtScreenDisplay.setBounds(20, 8, 242, 66);
+		frmCalculadora.getContentPane().add(txtScreenDisplay);
+		txtScreenDisplay.setColumns(10);
 		
-		lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-2.png")));
-		lblNewLabel_1.setBounds(83, 85, 53, 60);
-		frame.getContentPane().add(lblNewLabel_1);
+		keyOne = new JLabel("New label");
+		keyOne.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "1");
+			}
+		});
+		keyOne.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-2.png")));
+		keyOne.setBounds(83, 85, 53, 60);
+		frmCalculadora.getContentPane().add(keyOne);
 		
-		lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-3.png")));
-		lblNewLabel.setBounds(146, 90, 53, 50);
-		frame.getContentPane().add(lblNewLabel);
+		keyTwo = new JLabel("New label");
+		keyTwo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "2");
+			}
+		});
+		keyTwo.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-3.png")));
+		keyTwo.setBounds(146, 90, 53, 50);
+		frmCalculadora.getContentPane().add(keyTwo);
 		
-		lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-4.png")));
-		lblNewLabel_2.setBounds(209, 85, 53, 60);
-		frame.getContentPane().add(lblNewLabel_2);
+		keyThree = new JLabel("New label");
+		keyThree.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "3");
+			}
+		});
+		keyThree.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-4.png")));
+		keyThree.setBounds(209, 85, 53, 60);
+		frmCalculadora.getContentPane().add(keyThree);
 		
-		lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-5.png")));
-		lblNewLabel_3.setBounds(20, 156, 53, 50);
-		frame.getContentPane().add(lblNewLabel_3);
+		keyFour = new JLabel("New label");
+		keyFour.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "4");
+			}
+		});
+		keyFour.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-5.png")));
+		keyFour.setBounds(20, 156, 53, 50);
+		frmCalculadora.getContentPane().add(keyFour);
 		
-		lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-6.png")));
-		lblNewLabel_4.setBounds(83, 156, 53, 50);
-		frame.getContentPane().add(lblNewLabel_4);
+		keyFive = new JLabel("New label");
+		keyFive.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "5");
+			}
+		});
+		keyFive.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-6.png")));
+		keyFive.setBounds(83, 156, 53, 50);
+		frmCalculadora.getContentPane().add(keyFive);
 		
-		lblNewLabel_5 = new JLabel("New label");
-		lblNewLabel_5.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-7.png")));
-		lblNewLabel_5.setBounds(146, 156, 53, 50);
-		frame.getContentPane().add(lblNewLabel_5);
+		keySix = new JLabel("New label");
+		keySix.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "6");
+			}
+		});
+		keySix.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-7.png")));
+		keySix.setBounds(146, 156, 53, 50);
+		frmCalculadora.getContentPane().add(keySix);
 		
-		lblNewLabel_6 = new JLabel("New label");
-		lblNewLabel_6.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-8.png")));
-		lblNewLabel_6.setBounds(209, 156, 53, 50);
-		frame.getContentPane().add(lblNewLabel_6);
+		keySeven = new JLabel("New label");
+		keySeven.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "7");
+			}
+		});
+		keySeven.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-8.png")));
+		keySeven.setBounds(209, 156, 53, 50);
+		frmCalculadora.getContentPane().add(keySeven);
 		
-		lblNewLabel_7 = new JLabel("New label");
-		lblNewLabel_7.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-10.png")));
-		lblNewLabel_7.setBounds(83, 212, 53, 60);
-		frame.getContentPane().add(lblNewLabel_7);
+		keyNine = new JLabel("New label");
+		keyNine.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "9");
+			}
+		});
+		keyNine.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-10.png")));
+		keyNine.setBounds(83, 212, 53, 60);
+		frmCalculadora.getContentPane().add(keyNine);
 		
-		lblNewLabel_8 = new JLabel("New label");
-		lblNewLabel_8.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-9.png")));
-		lblNewLabel_8.setBounds(20, 217, 53, 50);
-		frame.getContentPane().add(lblNewLabel_8);
+		keyEight = new JLabel("New label");
+		keyEight.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "8");
+			}
+		});
+		keyEight.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-9.png")));
+		keyEight.setBounds(20, 217, 53, 50);
+		frmCalculadora.getContentPane().add(keyEight);
 		
-		lblNewLabel_9 = new JLabel("New label");
-		lblNewLabel_9.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-1.png")));
-		lblNewLabel_9.setBounds(20, 90, 53, 50);
-		frame.getContentPane().add(lblNewLabel_9);
+		keyZero = new JLabel("New label");
+		keyZero.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "0");
+			}
+		});
 		
-		lblNewLabel_10 = new JLabel("New label");
-		lblNewLabel_10.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/suma.png")));
-		lblNewLabel_10.setBounds(146, 212, 53, 60);
-		frame.getContentPane().add(lblNewLabel_10);
+		keyZero.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/image-1.png")));
+		keyZero.setBounds(20, 90, 53, 50);
+		frmCalculadora.getContentPane().add(keyZero);
 		
-		lblNewLabel_11 = new JLabel("New label");
-		lblNewLabel_11.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/1.png")));
-		lblNewLabel_11.setBounds(209, 212, 53, 60);
-		frame.getContentPane().add(lblNewLabel_11);
+		keyPlus = new JLabel("New label");
+		keyPlus.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(operador == -1) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "+");
+				operador = 0;
+				}
+			}
+		});
+		keyPlus.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/suma.png")));
+		keyPlus.setBounds(146, 212, 53, 60);
+		frmCalculadora.getContentPane().add(keyPlus);
 		
-		lblNewLabel_12 = new JLabel("New label");
-		lblNewLabel_12.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/multi.png")));
-		lblNewLabel_12.setBounds(83, 280, 53, 50);
-		frame.getContentPane().add(lblNewLabel_12);
+		keyMinus = new JLabel("New label");
+		keyMinus.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(operador == -1) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "-");
+				operador = 1;
+				}
+			}
+		});
+		keyMinus.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/1.png")));
+		keyMinus.setBounds(209, 212, 53, 60);
+		frmCalculadora.getContentPane().add(keyMinus);
 		
-		lblNewLabel_13 = new JLabel("New label");
-		lblNewLabel_13.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/divi.png")));
-		lblNewLabel_13.setBounds(146, 280, 53, 50);
-		frame.getContentPane().add(lblNewLabel_13);
+		keyTimes = new JLabel("New label");
+		keyTimes.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(operador == -1) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "x");
+				operador = 2;
+				}
+			}
+		});
+		keyTimes.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/multi.png")));
+		keyTimes.setBounds(83, 280, 53, 50);
+		frmCalculadora.getContentPane().add(keyTimes);
 		
-		lblNewLabel_14 = new JLabel("New label");
-		lblNewLabel_14.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/igual.png")));
-		lblNewLabel_14.setBounds(209, 280, 53, 50);
-		frame.getContentPane().add(lblNewLabel_14);
-		frame.setBounds(100, 100, 300, 402);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		keyDivide = new JLabel("New label");
+		keyDivide.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(operador == -1) {
+				txtScreenDisplay.setText(txtScreenDisplay.getText() + "/");
+				operador = 3;
+				}
+			}
+		});
+		keyDivide.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/divi.png")));
+		keyDivide.setBounds(146, 280, 53, 50);
+		frmCalculadora.getContentPane().add(keyDivide);
+		
+		keyEquals = new JLabel("New label");
+		keyEquals.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(txtScreenDisplay.getText().isEmpty() == false) {
+					try {
+				switch(operador) {
+				case 0:
+					separados = txtScreenDisplay.getText().split("\\+");
+					valor1 = Integer.parseInt(separados[0]);
+					valor2 = Integer.parseInt(separados[1]);
+					break;
+				case 1:
+					separados = txtScreenDisplay.getText().split("\\-");
+					valor1 = Integer.parseInt(separados[0]);
+					valor2 = Integer.parseInt(separados[1]);
+					break;
+				case 2:
+					separados = txtScreenDisplay.getText().split("x");
+					valor1 = Integer.parseInt(separados[0]);
+					valor2 = Integer.parseInt(separados[1]);
+					break;
+				case 3:
+					separados = txtScreenDisplay.getText().split("\\/");
+					valor1 = Integer.parseInt(separados[0]);
+					valor2 = Integer.parseInt(separados[1]);
+					break;
+				default:
+					valor1 = Integer.parseInt(txtScreenDisplay.getText());
+					valor2 = 0;
+					operador = 0;
+				}
+				
+				VentanaCalculo ventana = new VentanaCalculo(valor1,valor2,operador);
+				ventana.setVisible(true);
+					} catch(ArrayIndexOutOfBoundsException ex) {
+						JOptionPane.showMessageDialog(null, "Expresion Invalida");
+					}
+					txtScreenDisplay.setText("");
+					operador = -1;
+
+				}
+			}
+		});
+		keyEquals.setIcon(new ImageIcon(PrincipalPrueba.class.getResource("/images/igual.png")));
+		keyEquals.setBounds(209, 280, 53, 50);
+		frmCalculadora.getContentPane().add(keyEquals);
+		frmCalculadora.setBounds(100, 100, 300, 402);
+		frmCalculadora.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
