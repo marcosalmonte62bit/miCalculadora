@@ -54,7 +54,7 @@ public class VentanaCalculo extends JDialog {
 					txtResultado.setText("No se puede dividir entre cero");
 				}
 				txtResultado.setEditable(false);
-				txtResultado.setBounds(230, 28, 144, 20);
+				txtResultado.setBounds(230, 28, 182, 20);
 				panel.add(txtResultado);
 				txtResultado.setColumns(10);
 			}

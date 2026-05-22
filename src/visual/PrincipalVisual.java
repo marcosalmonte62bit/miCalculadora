@@ -273,13 +273,15 @@ public class PrincipalVisual {
 					valor1 = Integer.parseInt(txtScreenDisplay.getText());
 					valor2 = 0;
 					operador = 0;
+					break;
 				}
 				
 				VentanaCalculo ventana = new VentanaCalculo(valor1,valor2,operador);
 				ventana.setVisible(true);
 					} catch(ArrayIndexOutOfBoundsException ex) {
-						JOptionPane.showMessageDialog(null, "Expresion Invalida");
+					  JOptionPane.showMessageDialog(null, "Expresión Inválida");
 					}
+					
 					txtScreenDisplay.setText("");
 					operador = -1;
 
@@ -289,6 +291,18 @@ public class PrincipalVisual {
 		keyEquals.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/igual.png")));
 		keyEquals.setBounds(209, 280, 53, 50);
 		frmCalculadora.getContentPane().add(keyEquals);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtScreenDisplay.setText("");
+				operador = -1;
+			}
+		});
+		lblNewLabel.setIcon(new ImageIcon(PrincipalVisual.class.getResource("/images/ac.png")));
+		lblNewLabel.setBounds(20, 281, 53, 49);
+		frmCalculadora.getContentPane().add(lblNewLabel);
 		frmCalculadora.setBounds(100, 100, 300, 402);
 		frmCalculadora.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
